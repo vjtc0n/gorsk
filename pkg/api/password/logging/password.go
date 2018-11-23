@@ -4,12 +4,12 @@ import (
 	"time"
 
 	"github.com/labstack/echo"
-	"github.com/ribice/gorsk/pkg/api/password"
-	"github.com/ribice/gorsk/pkg/utl/model"
+	"github.com/veep-provider/pkg/api/password"
+	"github.com/veep-provider/pkg/utl/model"
 )
 
 // New creates new password logging service
-func New(svc password.Service, logger gorsk.Logger) *LogService {
+func New(svc password.Service, logger veep.Logger) *LogService {
 	return &LogService{
 		Service: svc,
 		logger:  logger,
@@ -19,7 +19,7 @@ func New(svc password.Service, logger gorsk.Logger) *LogService {
 // LogService represents password logging service
 type LogService struct {
 	password.Service
-	logger gorsk.Logger
+	logger veep.Logger
 }
 
 const name = "password"

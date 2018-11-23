@@ -1,4 +1,4 @@
-package gorsk
+package veep
 
 import (
 	"errors"

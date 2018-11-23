@@ -1,4 +1,4 @@
-package gorsk
+package veep
 
 import (
 	"github.com/labstack/echo"

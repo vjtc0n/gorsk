@@ -1,4 +1,4 @@
-package gorsk
+package veep
 
 // Company represents company model
 type Company struct {

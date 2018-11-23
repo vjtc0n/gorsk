@@ -1,8 +1,8 @@
 database:
   log_queries: true
   timeout_seconds: 5
-  psn: postgres://biadpozi:3_Czbl7jSjkUEWk--VP8QXMke-mFnczq@horton.elephantsql.com:5432/biadpozi
-
+  psn: postgres://dbstshnt:2zAVC17V0w5xjz0HQGAr6dE883ER9saO@baasu.db.elephantsql.com:5432/dbstshnt
+  
 server:
   port: :8080
   debug: true

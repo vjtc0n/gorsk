@@ -35,24 +35,24 @@ package api
 import (
 	"crypto/sha1"
 
-	"github.com/ribice/gorsk/pkg/utl/zlog"
+	"github.com/veep-provider/pkg/utl/zlog"
 
-	"github.com/ribice/gorsk/pkg/api/auth"
-	al "github.com/ribice/gorsk/pkg/api/auth/logging"
-	at "github.com/ribice/gorsk/pkg/api/auth/transport"
-	"github.com/ribice/gorsk/pkg/api/password"
-	pl "github.com/ribice/gorsk/pkg/api/password/logging"
-	pt "github.com/ribice/gorsk/pkg/api/password/transport"
-	"github.com/ribice/gorsk/pkg/api/user"
-	ul "github.com/ribice/gorsk/pkg/api/user/logging"
-	ut "github.com/ribice/gorsk/pkg/api/user/transport"
+	"github.com/veep-provider/pkg/api/auth"
+	al "github.com/veep-provider/pkg/api/auth/logging"
+	at "github.com/veep-provider/pkg/api/auth/transport"
+	"github.com/veep-provider/pkg/api/password"
+	pl "github.com/veep-provider/pkg/api/password/logging"
+	pt "github.com/veep-provider/pkg/api/password/transport"
+	"github.com/veep-provider/pkg/api/user"
+	ul "github.com/veep-provider/pkg/api/user/logging"
+	ut "github.com/veep-provider/pkg/api/user/transport"
 
-	"github.com/ribice/gorsk/pkg/utl/config"
-	"github.com/ribice/gorsk/pkg/utl/middleware/jwt"
-	"github.com/ribice/gorsk/pkg/utl/postgres"
-	"github.com/ribice/gorsk/pkg/utl/rbac"
-	"github.com/ribice/gorsk/pkg/utl/secure"
-	"github.com/ribice/gorsk/pkg/utl/server"
+	"github.com/veep-provider/pkg/utl/config"
+	"github.com/veep-provider/pkg/utl/middleware/jwt"
+	"github.com/veep-provider/pkg/utl/postgres"
+	"github.com/veep-provider/pkg/utl/rbac"
+	"github.com/veep-provider/pkg/utl/secure"
+	"github.com/veep-provider/pkg/utl/server"
 )
 
 // Start starts the API service

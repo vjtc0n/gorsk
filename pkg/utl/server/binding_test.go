@@ -6,8 +6,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/ribice/gorsk/pkg/utl/mock"
-	"github.com/ribice/gorsk/pkg/utl/server"
+	"github.com/veep-provider/pkg/utl/mock"
+	"github.com/veep-provider/pkg/utl/server"
 	"github.com/stretchr/testify/assert"
 )
 

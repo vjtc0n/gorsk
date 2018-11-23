@@ -1,15 +1,17 @@
 # GORSK - GO(lang) Restful Starter Kit
 
-[![Build Status](https://travis-ci.org/ribice/gorsk.svg?branch=master)](https://travis-ci.org/ribice/gorsk)
-[![codecov](https://codecov.io/gh/ribice/gorsk/branch/master/graph/badge.svg)](https://codecov.io/gh/ribice/gorsk)
-[![Go Report Card](https://goreportcard.com/badge/github.com/ribice/gorsk)](https://goreportcard.com/report/github.com/ribice/gorsk)
-[![Maintainability](https://api.codeclimate.com/v1/badges/c3cb09dbc0bc43186464/maintainability)](https://codeclimate.com/github/ribice/gorsk/maintainability)
+[![Build Status](https://travis-ci.org/veep-provider.svg?branch=master)](https://travis-ci.org/veep-provider)
+[![codecov](https://codecov.io/gh/veep-provider/branch/master/graph/badge.svg)](https://codecov.io/gh/veep-provider)
+[![Go Report Card](https://goreportcard.com/badge/github.com/veep-provider)](https://goreportcard.com/report/github.com/veep-provider)
+[![Maintainability](https://api.codeclimate.com/v1/badges/c3cb09dbc0bc43186464/maintainability)](https://codeclimate.com/github/veep-provider/maintainability)
 
 **[Gorsk V2 is released - read more about it](https://www.ribice.ba/refactoring-gorsk/)**
 
 Gorsk is a Golang starter kit for developing RESTful services. It is designed to help you kickstart your project, skipping the 'setting-up part' and jumping straight to writing business logic.
 
-Previously Gorsk was built using [Gin](https://github.com/gin-gonic/gin). Gorsk using Gin is available [HERE](https://github.com/ribice/gorsk-gin).
+Previously Gorsk was built using [Gin](https://github.com/gin-gonic/gin). Gorsk using Gin is available [HERE](https://github.com/veep-provider-gin).
+
+Now, this project uses [Echo](https://github.com/labstack/echo)
 
 Gorsk follows SOLID principles, with package design being inspired by several package designs, including Ben Johnson's [Standard Package Layout](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1), [Go Standard Package Layout](https://github.com/golang-standards/project-layout) with my own ideas applied to both. The idea for building this project and its readme structure was inspired by [this](https://github.com/qiangxue/golang-restful-starter-kit).
 
@@ -32,20 +34,20 @@ The following dependencies are used in this project (generated using [Glice](htt
 
 ```bash
 |-------------------------------------|--------------------------------------------|--------------|
-|             DEPENDENCY              |                  REPOURL                   |   LICENSE    |
-|-------------------------------------|--------------------------------------------|--------------|
-| github.com/labstack/echo            | https://github.com/labstack/echo           | MIT          |
-| github.com/go-pg/pg                 | https://github.com/go-pg/pg                | bsd-2-clause |
-| github.com/dgrijalva/jwt-go         | https://github.com/dgrijalva/jwt-go        | MIT          |
-| github.com/rs/zerolog               | https://github.com/rs/zerolog              | MIT          |
-| golang.org/x/crypto/bcrypt          | https://github.com/golang/crypto           |              |
-| gopkg.in/yaml.v2                    | https://github.com/go-yaml/yaml            |              |
-| gopkg.in/go-playground/validator.v8 | https://github.com/go-playground/validator | MIT          |
-| github.com/lib/pq                   | https://github.com/lib/pq                  | Other        |
-| github.com/nbutton23/zxcvbn-go      | https://github.com/nbutton23/zxcvbn-go     | MIT          |
-| github.com/fortytw2/dockertest      | https://github.com/fortytw2/dockertest     | MIT          |
-| github.com/stretchr/testify         | https://github.com/stretchr/testify        | Other        |
-|-------------------------------------|--------------------------------------------|--------------|
+| DEPENDENCY                            | REPOURL                                      | LICENSE        |
+| ------------------------------------- | -------------------------------------------- | -------------- |
+| github.com/labstack/echo              | https://github.com/labstack/echo             | MIT            |
+| github.com/go-pg/pg                   | https://github.com/go-pg/pg                  | bsd-2-clause   |
+| github.com/dgrijalva/jwt-go           | https://github.com/dgrijalva/jwt-go          | MIT            |
+| github.com/rs/zerolog                 | https://github.com/rs/zerolog                | MIT            |
+| golang.org/x/crypto/bcrypt            | https://github.com/golang/crypto             |                |
+| gopkg.in/yaml.v2                      | https://github.com/go-yaml/yaml              |                |
+| gopkg.in/go-playground/validator.v8   | https://github.com/go-playground/validator   | MIT            |
+| github.com/lib/pq                     | https://github.com/lib/pq                    | Other          |
+| github.com/nbutton23/zxcvbn-go        | https://github.com/nbutton23/zxcvbn-go       | MIT            |
+| github.com/fortytw2/dockertest        | https://github.com/fortytw2/dockertest       | MIT            |
+| github.com/stretchr/testify           | https://github.com/stretchr/testify          | Other          |
+| ------------------------------------- | -------------------------------------------- | -------------- |
 ```
 
 1. Echo - HTTP 'framework'.
@@ -66,7 +68,7 @@ Most of these can easily be replaced with your own choices since their usage is 
 
 Using Gorsk requires having Go 1.7 or above. Once you downloaded Gorsk (either using Git or go get) you need to configure the following:
 
-1. To use Gorsk as a starting point of a real project whose package name is something like `github.com/author/project`, move the directory `$GOPATH/github.com/ribice/gorsk` to `$GOPATH/github.com/author/project` and do a global replacement of the string `github.com/ribice/gorsk` with `github.com/author/project`.
+1. To use Gorsk as a starting point of a real project whose package name is something like `github.com/author/project`, move the directory `$GOPATH/github.com/veep-provider` to `$GOPATH/github.com/author/project` and do a global replacement of the string `github.com/veep-provider` with `github.com/author/project`.
 
 2. Rename the gorsk package inside `pkg/utl/model` with your own project name, then using search & replace do a global replacement of `.gorsk` with your project name.
 

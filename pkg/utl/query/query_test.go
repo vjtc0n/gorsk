@@ -3,55 +3,55 @@ package query_test
 import (
 	"testing"
 
-	"github.com/ribice/gorsk/pkg/utl/model"
+	"github.com/veep-provider/pkg/utl/model"
 
 	"github.com/labstack/echo"
 
-	"github.com/ribice/gorsk/pkg/utl/query"
+	"github.com/veep-provider/pkg/utl/query"
 	"github.com/stretchr/testify/assert"
 )
 
 func TestList(t *testing.T) {
 	type args struct {
-		user *gorsk.AuthUser
+		user *veep.AuthUser
 	}
 	cases := []struct {
 		name     string
 		args     args
-		wantData *gorsk.ListQuery
+		wantData *veep.ListQuery
 		wantErr  error
 	}{
 		{
 			name: "Super admin user",
-			args: args{user: &gorsk.AuthUser{
-				Role: gorsk.SuperAdminRole,
+			args: args{user: &veep.AuthUser{
+				Role: veep.SuperAdminRole,
 			}},
 		},
 		{
 			name: "Company admin user",
-			args: args{user: &gorsk.AuthUser{
-				Role:      gorsk.CompanyAdminRole,
+			args: args{user: &veep.AuthUser{
+				Role:      veep.CompanyAdminRole,
 				CompanyID: 1,
 			}},
-			wantData: &gorsk.ListQuery{
+			wantData: &veep.ListQuery{
 				Query: "company_id = ?",
 				ID:    1},
 		},
 		{
 			name: "Location admin user",
-			args: args{user: &gorsk.AuthUser{
-				Role:       gorsk.LocationAdminRole,
+			args: args{user: &veep.AuthUser{
+				Role:       veep.LocationAdminRole,
 				CompanyID:  1,
 				LocationID: 2,
 			}},
-			wantData: &gorsk.ListQuery{
+			wantData: &veep.ListQuery{
 				Query: "location_id = ?",
 				ID:    2},
 		},
 		{
 			name: "Normal user",
-			args: args{user: &gorsk.AuthUser{
-				Role: gorsk.UserRole,
+			args: args{user: &veep.AuthUser{
+				Role: veep.UserRole,
 			}},
 			wantErr: echo.ErrForbidden,
 		},

@@ -6,10 +6,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ribice/gorsk/pkg/utl/middleware/jwt"
-	"github.com/ribice/gorsk/pkg/utl/model"
+	"github.com/veep-provider/pkg/utl/middleware/jwt"
+	"github.com/veep-provider/pkg/utl/model"
 
-	"github.com/ribice/gorsk/pkg/utl/mock"
+	"github.com/veep-provider/pkg/utl/mock"
 
 	"github.com/labstack/echo"
 	"github.com/stretchr/testify/assert"
@@ -79,7 +79,7 @@ func TestGenerateToken(t *testing.T) {
 		name      string
 		wantToken string
 		algo      string
-		req       *gorsk.User
+		req       *veep.User
 	}{
 		{
 			name: "Invalid algo",
@@ -88,14 +88,14 @@ func TestGenerateToken(t *testing.T) {
 		{
 			name: "Success",
 			algo: "HS256",
-			req: &gorsk.User{
-				Base: gorsk.Base{
+			req: &veep.User{
+				Base: veep.Base{
 					ID: 1,
 				},
 				Username: "johndoe",
 				Email:    "johndoe@mail.com",
-				Role: &gorsk.Role{
-					AccessLevel: gorsk.SuperAdminRole,
+				Role: &veep.Role{
+					AccessLevel: veep.SuperAdminRole,
 				},
 				CompanyID:  1,
 				LocationID: 1,

@@ -1,7 +1,7 @@
 package transport
 
 import (
-	"github.com/ribice/gorsk/pkg/utl/model"
+	"github.com/veep-provider/pkg/utl/model"
 )
 
 // User model response
@@ -9,7 +9,7 @@ import (
 type swaggUserResponse struct {
 	// in:body
 	Body struct {
-		*gorsk.User
+		*veep.User
 	}
 }
 
@@ -18,7 +18,7 @@ type swaggUserResponse struct {
 type swaggUserListResponse struct {
 	// in:body
 	Body struct {
-		Users []gorsk.User `json:"users"`
+		Users []veep.User `json:"users"`
 		Page  int          `json:"page"`
 	}
 }

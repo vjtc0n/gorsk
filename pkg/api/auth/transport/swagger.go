@@ -1,7 +1,7 @@
 package transport
 
 import (
-	"github.com/ribice/gorsk/pkg/utl/model"
+	"github.com/veep-provider/pkg/utl/model"
 )
 
 // Login request
@@ -16,7 +16,7 @@ type swaggLoginReq struct {
 type swaggLoginResp struct {
 	// in:body
 	Body struct {
-		*gorsk.AuthToken
+		*veep.AuthToken
 	}
 }
 
@@ -25,6 +25,6 @@ type swaggLoginResp struct {
 type swaggRefreshResp struct {
 	// in:body
 	Body struct {
-		*gorsk.RefreshToken
+		*veep.RefreshToken
 	}
 }

@@ -3,7 +3,7 @@ package transport
 import (
 	"net/http"
 
-	"github.com/ribice/gorsk/pkg/api/auth"
+	"github.com/veep-provider/pkg/api/auth"
 
 	"github.com/labstack/echo"
 )

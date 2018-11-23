@@ -5,8 +5,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/ribice/gorsk/pkg/utl/model"
-	"github.com/ribice/gorsk/pkg/utl/secure"
+	"github.com/veep-provider/pkg/utl/model"
+	"github.com/veep-provider/pkg/utl/secure"
 
 	"github.com/go-pg/pg"
 	"github.com/go-pg/pg/orm"
@@ -20,7 +20,7 @@ func main() {
 	INSERT INTO public.roles VALUES (120, 120, 'COMPANY_ADMIN');
 	INSERT INTO public.roles VALUES (130, 130, 'LOCATION_ADMIN');
 	INSERT INTO public.roles VALUES (200, 200, 'USER');`
-	var psn = `postgres://biadpozi:3_Czbl7jSjkUEWk--VP8QXMke-mFnczq@horton.elephantsql.com:5432/biadpozi`
+	var psn = `postgres://dbstshnt:2zAVC17V0w5xjz0HQGAr6dE883ER9saO@baasu.db.elephantsql.com:5432/dbstshnt`
 	queries := strings.Split(dbInsert, ";")
 
 	u, err := pg.ParseURL(psn)
@@ -28,7 +28,7 @@ func main() {
 	db := pg.Connect(u)
 	_, err = db.Exec("SELECT 1")
 	checkErr(err)
-	createSchema(db, &gorsk.Company{}, &gorsk.Location{}, &gorsk.Role{}, &gorsk.User{})
+	createSchema(db, &veep.Company{}, &veep.Location{}, &veep.Role{}, &veep.User{})
 
 	for _, v := range queries[0 : len(queries)-1] {
 		_, err := db.Exec(v)

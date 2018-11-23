@@ -4,8 +4,8 @@ import (
 	"github.com/go-pg/pg"
 	"github.com/go-pg/pg/orm"
 	"github.com/labstack/echo"
-	"github.com/ribice/gorsk/pkg/api/password/platform/pgsql"
-	"github.com/ribice/gorsk/pkg/utl/model"
+	"github.com/veep-provider/pkg/api/password/platform/pgsql"
+	"github.com/veep-provider/pkg/utl/model"
 )
 
 // Service represents password application interface
@@ -38,8 +38,8 @@ type Password struct {
 
 // UserDB represents user repository interface
 type UserDB interface {
-	View(orm.DB, int) (*gorsk.User, error)
-	Update(orm.DB, *gorsk.User) error
+	View(orm.DB, int) (*veep.User, error)
+	Update(orm.DB, *veep.User) error
 }
 
 // Securer represents security interface

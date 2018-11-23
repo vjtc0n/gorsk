@@ -1,4 +1,4 @@
-package gorsk
+package veep
 
 // Success response
 // swagger:response ok

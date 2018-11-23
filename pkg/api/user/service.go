@@ -4,17 +4,17 @@ import (
 	"github.com/go-pg/pg"
 	"github.com/go-pg/pg/orm"
 	"github.com/labstack/echo"
-	"github.com/ribice/gorsk/pkg/api/user/platform/pgsql"
-	"github.com/ribice/gorsk/pkg/utl/model"
+	"github.com/veep-provider/pkg/api/user/platform/pgsql"
+	"github.com/veep-provider/pkg/utl/model"
 )
 
 // Service represents user application interface
 type Service interface {
-	Create(echo.Context, gorsk.User) (*gorsk.User, error)
-	List(echo.Context, *gorsk.Pagination) ([]gorsk.User, error)
-	View(echo.Context, int) (*gorsk.User, error)
+	Create(echo.Context, veep.User) (*veep.User, error)
+	List(echo.Context, *veep.Pagination) ([]veep.User, error)
+	View(echo.Context, int) (*veep.User, error)
 	Delete(echo.Context, int) error
-	Update(echo.Context, *Update) (*gorsk.User, error)
+	Update(echo.Context, *Update) (*veep.User, error)
 }
 
 // New creates new user application service
@@ -42,17 +42,17 @@ type Securer interface {
 
 // UDB represents user repository interface
 type UDB interface {
-	Create(orm.DB, gorsk.User) (*gorsk.User, error)
-	View(orm.DB, int) (*gorsk.User, error)
-	List(orm.DB, *gorsk.ListQuery, *gorsk.Pagination) ([]gorsk.User, error)
-	Update(orm.DB, *gorsk.User) error
-	Delete(orm.DB, *gorsk.User) error
+	Create(orm.DB, veep.User) (*veep.User, error)
+	View(orm.DB, int) (*veep.User, error)
+	List(orm.DB, *veep.ListQuery, *veep.Pagination) ([]veep.User, error)
+	Update(orm.DB, *veep.User) error
+	Delete(orm.DB, *veep.User) error
 }
 
 // RBAC represents role-based-access-control interface
 type RBAC interface {
-	User(echo.Context) *gorsk.AuthUser
+	User(echo.Context) *veep.AuthUser
 	EnforceUser(echo.Context, int) error
-	AccountCreate(echo.Context, gorsk.AccessRole, int, int) error
-	IsLowerRole(echo.Context, gorsk.AccessRole) error
+	AccountCreate(echo.Context, veep.AccessRole, int, int) error
+	IsLowerRole(echo.Context, veep.AccessRole) error
 }

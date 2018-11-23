@@ -6,13 +6,13 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/ribice/gorsk/pkg/api/password"
-	"github.com/ribice/gorsk/pkg/api/password/transport"
+	"github.com/veep-provider/pkg/api/password"
+	"github.com/veep-provider/pkg/api/password/transport"
 
-	"github.com/ribice/gorsk/pkg/utl/mock"
-	"github.com/ribice/gorsk/pkg/utl/mock/mockdb"
-	"github.com/ribice/gorsk/pkg/utl/model"
-	"github.com/ribice/gorsk/pkg/utl/server"
+	"github.com/veep-provider/pkg/utl/mock"
+	"github.com/veep-provider/pkg/utl/mock/mockdb"
+	"github.com/veep-provider/pkg/utl/model"
+	"github.com/veep-provider/pkg/utl/server"
 
 	"github.com/go-pg/pg/orm"
 	"github.com/labstack/echo"
@@ -67,12 +67,12 @@ func TestChangePassword(t *testing.T) {
 			},
 			id: "1",
 			udb: &mockdb.User{
-				ViewFn: func(db orm.DB, id int) (*gorsk.User, error) {
-					return &gorsk.User{
+				ViewFn: func(db orm.DB, id int) (*veep.User, error) {
+					return &veep.User{
 						Password: "oldPassword",
 					}, nil
 				},
-				UpdateFn: func(db orm.DB, usr *gorsk.User) error {
+				UpdateFn: func(db orm.DB, usr *veep.User) error {
 					return nil
 				},
 			},

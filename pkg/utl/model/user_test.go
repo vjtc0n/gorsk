@@ -1,13 +1,13 @@
-package gorsk_test
+package veep_test
 
 import (
 	"testing"
 
-	"github.com/ribice/gorsk/pkg/utl/model"
+	"github.com/veep-provider/pkg/utl/model"
 )
 
 func TestChangePassword(t *testing.T) {
-	user := &gorsk.User{
+	user := &veep.User{
 		FirstName: "TestGuy",
 	}
 
@@ -25,7 +25,7 @@ func TestChangePassword(t *testing.T) {
 }
 
 func TestUpdateLastLogin(t *testing.T) {
-	user := &gorsk.User{
+	user := &veep.User{
 		FirstName: "TestGuy",
 	}
 
